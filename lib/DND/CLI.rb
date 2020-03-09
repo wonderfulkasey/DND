@@ -1,6 +1,5 @@
 class DND::CLI
 
- class DND::CLI
     def start
         puts "Welcome to the your local 5E Monster Menagerie!"
         puts "Please type in the monster you would like for me to look up."
@@ -44,4 +43,4 @@ class DND::CLI
     DND::Monster.destroy_all
     puts "Farewell, and good luck on your quest!"
   end
-end 
+end
