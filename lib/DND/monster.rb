@@ -1,4 +1,4 @@
-class Type
+class DND::Monster
 
   attr_accessor :name, :hit_die, :url
   
