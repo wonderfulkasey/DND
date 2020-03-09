@@ -1,10 +1,10 @@
-class DND::api
+class DND::API
 
   def self.fetch(term)
          url = "http www.dnd5eapi.co/api/monsters/#{term}"
          response = HTTParty.get(url)
          if !response.empty?
-            term_instance = DND::monster.new(term)
+            term_instance = DND::Monster.new(term)
             response.each do |d|
                 definition = d["definition"]
                 example = d["example"]
