@@ -1,4 +1,4 @@
-class DND::Dungeons
+class DND::Type
   attr_accessor :id, :name, :street, :brewery_type, :city, :state, :postal_code, :country, :longitude, :latitude, :phone, :website_url, :updated_at, :tag_list
   
   @@all = []
