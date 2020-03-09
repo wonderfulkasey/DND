@@ -7,4 +7,5 @@ require 'pry'
 require 'httparty'
 
 module DND
+  class Error < StandardError; end
 end

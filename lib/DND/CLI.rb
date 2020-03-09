@@ -14,14 +14,14 @@ class DND::CLI
     def display_def
         DND::Monster.all.each.with_index(1) do |d,index|
             sleep(1)
-            puts "#{index}. #{d.definition}"
+            puts "#{index}. #{d.name} is a #{d.challenge_level} monster."
             puts "-----------------------------------------"
 
         end 
     end 
 
     def more_options
-        puts "If you would like to see more about a specific monster, please enter the number associated with that specific monster."
+        puts "If you would like to know more about this monster, please enter the number associated with it."
         input = gets.chomp.to_i
         index = input - 1
         user_choice = DND::Monster.all[index]
