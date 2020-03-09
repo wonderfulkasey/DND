@@ -1,6 +1,6 @@
 class DND::Subtype
 
-  attr_accessor :name, :class, :subclass_flavor, :desc, :url
+  attr_accessor :name, :subclass_flavor, :desc, :url
   
   @@all = []
   
@@ -12,7 +12,6 @@ class DND::Subtype
   def self.display_details(index)
     d = self.all[index]
     puts "---------------"
-    puts "#{d.name} is a subset of #{d.class}."
     puts "Here is an example about #{d.name}: #{d.subclass_flavor}."
     puts "A full description includes" + " #{d.desc}."
     puts "You can find more information at #{url}."

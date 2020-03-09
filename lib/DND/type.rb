@@ -1,5 +1,6 @@
 class DND::Type
-  attr_accessor :id, :name, :street, :brewery_type, :city, :state, :postal_code, :country, :longitude, :latitude, :phone, :website_url, :updated_at, :tag_list
+
+  attr_accessor :name, :hit_die, :url
   
   @@all = []
   
@@ -9,13 +10,11 @@ class DND::Type
   end
   
   def self.display_details(index)
-    b = self.all[index]
+    d = self.all[index]
     puts "---------------"
-    puts "#{b.name} is located at #{b.street} in #{b.city}, #{b.state}."
-    puts "Here are some details about #{b.name}:"
-    puts "Type:" + " #{b.brewery_type}"
-    puts "Phone:" + " #{b.phone}"
-    puts "Website:" + " #{b.website_url}"
+    puts "#{d.name} is a very popular type of Dungeons and Dragons character!"
+    puts "Your character would have #{d.hit_die} worth of hit die."
+    puts "You can find more information at #{url}."
     puts "---------------"
   end
   
