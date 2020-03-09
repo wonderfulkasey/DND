@@ -12,6 +12,7 @@ class DND::API
                 alignment = d["alignment"]
                 armor_class = d["armor_class"]
                 challenge_rating = d["challenge_rating"]
+                 #binding.pry
 
                 DND::Monster.new(name, type, size, alignment, armor_class, challenge_rating)
              end
