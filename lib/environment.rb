@@ -1,9 +1,9 @@
-require_relative "./DND/version"
-require_relative './DND/monster'
-require_relative './DND/cli'
-require_relative './DND/api'
+require "./lib/DND/version"
+require_relative './DND/Monster'
+require_relative './DND/CLI'
+require_relative './DND/API'
 
-#require 'pry'
+require 'pry'
 require 'httparty'
 
 module DND
