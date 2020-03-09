@@ -16,15 +16,17 @@ class DND::CLI
     choice = gets.strip.downcase
     
     if choice == "type"
-      puts "Type out an option from this list: "
-      input = gets.strip.to_i
+      puts "#{}"
+      input = gets.strip.downcase.gsub(" ","_")
       DND::API.dnding_type(input)
       display_type
+
     elsif choice == "subtype"
-      puts "Type out an option from this list: "
+      puts "#{}"
       input = gets.strip.downcase.gsub(" ","_")
-      BrewFinder::API.dnding_state(input)
+      DND::API.dnding_subtype(input)
       display_subtype
+
     else
       puts "I'm sorry, that is not a phrase I recognize."
     end
@@ -32,16 +34,16 @@ class DND::CLI
     
   def display_type
     puts ""
-    BrewFinder::Brewery.all.each.with_index(1) {|b, i| puts "#{i})".colorize(:yellow) + " #{b.name} - #{b.street} - #{b.brewery_type}"}
+    DND::Brewery.all.each.with_index(1) {|b, i| puts "#{i})" + " #{b.name} - #{b.street} - #{b.brewery_type}"}
     puts ""
-    puts "Which brewery would you like to learn about? Please enter a number.".colorize(:yellow)
+    puts "Which option would you like to learn about? Please enter it below."
   end
   
   def display_subtype
     puts ""
-    BrewFinder::Brewery.all.each.with_index(1) {|b, i| puts "#{i})".colorize(:yellow) + " #{b.name} - #{b.city} - #{b.brewery_type}"}
+    DND::Brewery.all.each.with_index(1) {|b, i| puts "#{i})". + " #{b.name} - #{b.city} - #{b.brewery_type}"}
     puts ""
-    puts "Which brewery would you like to learn about? Please enter a number.".colorize(:yellow)
+    puts "Which option would you like to learn about? Please enter it below."
   end
   
   def dnd_details
@@ -54,7 +56,7 @@ class DND::CLI
         goodbye
       elsif input.to_i > 0 && input.to_i <= DND::Dungeons.all.length
         DND::Dungeons.display_details(input.to_i-1)
-        puts "Pick a new number from the list to learn about another option."
+        puts "Pick a new option from the list to learn about another option."
       elsif input == "start over"
         DND::Dungeons.destroy_all
         search_dnding

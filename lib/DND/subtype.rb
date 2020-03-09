@@ -1,4 +1,4 @@
-class DND::Subtype
+class Subtype
 
   attr_accessor :name, :subclass_flavor, :desc, :url
   
@@ -10,11 +10,11 @@ class DND::Subtype
   end
   
   def self.display_details(index)
-    d = self.all[index]
+    s = self.all[index]
     puts "---------------"
-    puts "Here is an example about #{d.name}: #{d.subclass_flavor}."
-    puts "A full description includes" + " #{d.desc}."
-    puts "You can find more information at #{url}."
+    puts "Here is an example of a #{s.name} character: #{s.subclass_flavor}."
+    puts "A full description includes" + " #{s.desc}."
+    puts "You can find more information at #{s.url}."
     puts "---------------"
   end
   

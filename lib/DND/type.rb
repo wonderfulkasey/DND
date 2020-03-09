@@ -1,4 +1,4 @@
-class DND::Type
+class Type
 
   attr_accessor :name, :hit_die, :url
   
@@ -10,11 +10,11 @@ class DND::Type
   end
   
   def self.display_details(index)
-    d = self.all[index]
+    t = self.all[index]
     puts "---------------"
-    puts "#{d.name} is a very popular type of Dungeons and Dragons character!"
-    puts "Your character would have #{d.hit_die} worth of hit die."
-    puts "You can find more information at #{url}."
+    puts "#{t.name} is a very popular type of Dungeons and Dragons character!"
+    puts "Your character would have #{t.hit_die} worth of hit die."
+    puts "You can find more information at #{t.url}."
     puts "---------------"
   end
   
