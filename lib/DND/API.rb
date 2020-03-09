@@ -7,13 +7,13 @@ class DND::API
             name_instance = DND::Monster.new(name)
             response.each do |d|
                 name = d["name"]
-                type = d["example"]
-                size = d
-                alignment =
-                armor_class =
-                challenge_rating =
+                type = d["type"]
+                size = d["size"]
+                alignment = d["alignment"]
+                armor_class = d["armor_class"]
+                challenge_rating = d["challenge_rating"]
 
-                DND::Monster.new(definition,example,term_instance)
+                DND::Monster.new(name, type, size, alignment, armor_class, challenge_rating)
              end
          else
             puts "Sorry, we couldn't find something with this term. Please check spelling and type it again below."
@@ -21,4 +21,4 @@ class DND::API
             self.fetch(input)
          end
     end
-end 
+end
