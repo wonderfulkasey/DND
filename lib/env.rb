@@ -4,7 +4,7 @@ require_relative './DND/cli'
 require_relative './DND/api'
 
 require 'pry'
-require 'httpie'
+require 'httparty'
 
 module DND
 end
