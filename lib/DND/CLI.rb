@@ -21,7 +21,9 @@ class DND::CLI
         #  binding.pry
             sleep(1)
             puts "-----------------------------------------"
-            puts "Wow! The #{@m.name} is a terrifying monster!"
+            puts "Give me just a moment...
+            Wow! The #{@m.name} is a terrifying monster!
+            Luckily, I know all about them."
   end
 
 
@@ -39,7 +41,8 @@ class DND::CLI
             puts "-----------------------------------------"
             puts "The #{@m.name} is a #{@m.size} sized monster with
             an armor class of #{@m.armor_class}. It is of the #{@m.type}
-            variety, and can be #{@m.alignment} on the moral scale."
+            variety, and can be #{@m.alignment} on the moral scale.
+            Quite an awe-inspiring lifeform!"
             puts "-----------------------------------------"
         else
           even_more
@@ -48,7 +51,7 @@ class DND::CLI
 
       def even_more
           @m=DND::Monster.all.last
-        puts "Would you like to know other facts about the #{@m.name}? enter y/n"
+        puts "Would you like to know some other facts about the #{@m.name}? enter y/n"
         puts "-----------------------------------------"
         input = gets.chomp.downcase
 
@@ -73,7 +76,8 @@ class DND::CLI
 
         else
           puts "-----------------------------------------"
-          puts "Farewell, and good luck on your quest!"
+          puts "Well then, this is where you must start your own journey.
+          Farewell, and good luck on your quest!"
           puts "-----------------------------------------"
         end
 
