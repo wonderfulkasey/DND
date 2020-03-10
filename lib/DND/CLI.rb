@@ -9,6 +9,7 @@ class DND::CLI
         DND::API.fetch(input)
         wowing
         more_options
+        even_more
         loop_or_exit
     end
 
@@ -38,16 +39,30 @@ class DND::CLI
             an armor class of #{@m.armor_class}. It is of the #{@m.type}
             variety, and can be #{@m.alignment} on the moral scale."
         else
-          loop_or_exit
+          even_more
         end
       end
 
+      def even_more
+        puts "Would you like to know some additional facts about the #{@m.name}?"
+        puts "-----------------------------------------"
+        input = gets.chomp.downcase
+
+        if input == "y"
+          puts "-----------------------------------------"
+          puts ""
+
+        else
+          loop_or_exit
+        end
+      end
 
     def loop_or_exit
         puts "Would you like to search for more monsters? enter y/n"
         puts "-----------------------------------------"
         input = gets.chomp.downcase
-        if input == "y"
+
+       if input == "y"
              start
 
         else
