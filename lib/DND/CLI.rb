@@ -26,6 +26,8 @@ class DND::CLI
 
 
     def more_options
+        @m=DND::Monster.all.last
+
         puts "Would you like to know more about this monster? enter y/n"
         puts "-----------------------------------------"
         input = gets.chomp.downcase
@@ -38,19 +40,23 @@ class DND::CLI
             puts "The #{@m.name} is a #{@m.size} sized monster with
             an armor class of #{@m.armor_class}. It is of the #{@m.type}
             variety, and can be #{@m.alignment} on the moral scale."
+            puts "-----------------------------------------"
         else
           even_more
         end
       end
 
       def even_more
-        puts "Would you like to know some additional facts about the #{@m.name}?"
+          @m=DND::Monster.all.last
+        puts "Would you like to know other facts about the #{@m.name}? enter y/n"
         puts "-----------------------------------------"
         input = gets.chomp.downcase
 
         if input == "y"
           puts "-----------------------------------------"
-          puts ""
+          puts "This monster has #{@m.constitution} constitution points.
+          It's charisma is #{@m.charisma} and
+          it's wisdom is #{@m.wisdom}."
 
         else
           loop_or_exit
