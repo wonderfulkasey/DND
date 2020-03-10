@@ -5,7 +5,7 @@ class DND::API
 
          response = RestClient.get(url)
          response = JSON.parse(response)
-         binding.pry
+         #binding.pry
          #binding.pry
          #if !response.empty?
                 name = response["name"]
