@@ -8,17 +8,17 @@ class DND::CLI
         wowing
         more_options
         loop_or_exit
-        goodbye
     end
 
 
     def wowing
         #DND::Monster
-        all.each.with_index(1) do |index|
+
+        @m=DND::Monster.all.last
+        #  binding.pry
             sleep(1)
-            puts "Wow! The #{"name"} is a terrifying monster!"
+            puts "Wow! The #{@m.name} is a terrifying monster!"
             puts "-----------------------------------------"
-    end
   end
 
 
@@ -29,17 +29,16 @@ class DND::CLI
         if input == "y"
         #input = gets.chomp.to_i
         #index = input - 1
-      #  user_choice = DND::Monster.all[index]
-            puts "The #{"name"} is a #{"size"} monster.
-            It has an armor class of #{"armor_class"}.
-            It is a #{"type"} of monster with an alignment of
-            #{"alignment"}."
+        #user_choice = DND::Monster.all[index]
+            puts "The #{@m.name} is a #{@m.size} monster.
+            It has an armor class of #{@m.armor_class}.
+            It is a #{@m.type} of monster with an alignment of
+            #{@m.alignment}."
 
         else
-          puts "{loop_or_exit}"
+          loop_or_exit
         end
       end
-
 
 
     def loop_or_exit
