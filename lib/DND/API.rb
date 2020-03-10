@@ -8,16 +8,13 @@ class DND::API
          binding.pry
          #binding.pry
          #if !response.empty?
-            name = response["name"]
-                name = d["name"]
-                type = d["type"]
-                size = d["size"]
-                alignment = d["alignment"]
-                armor_class = d["armor_class"]
-                challenge_rating = d["challenge_rating"]
-                 #binding.pry
+                name = response["name"]
+                type = response["type"]
+                size = response["size"]
+                alignment = response["alignment"]
+                armor_class = response["armor_class"]
 
-                DND::Monster.new(name, type, size, alignment, armor_class, challenge_rating)
+                DND::Monster.new(name, type, size, alignment, armor_class)
              #end
       # else
             #puts "Sorry, we couldn't find something with this term. Please check spelling and type it again below."
