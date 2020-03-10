@@ -5,23 +5,27 @@ class DND::CLI
         puts "Please type in the monster you would like for me to look up."
         input = gets.chomp.downcase
         DND::API.fetch(input)
-        display_def
+        wowing
         more_options
         loop_or_exit
         goodbye
     end
 
-    def display_def
-        DND::Monster
-        #.all.each.with_index(1) do |d,index|
-            #sleep(1)
+
+    def wowing
+        #DND::Monster
+        all.each.with_index(1) do |index|
+            sleep(1)
             puts "Wow! The #{"name"} is a terrifying monster!"
             puts "-----------------------------------------"
     end
+  end
+
 
     def more_options
         puts "Would you like to know more about this monster? enter y/n"
         input = gets.chomp.downcase
+
         if input == "y"
         #input = gets.chomp.to_i
         #index = input - 1
@@ -31,10 +35,12 @@ class DND::CLI
             It is a #{"type"} of monster with an alignment of
             #{"alignment"}."
 
-        else "n"
+        else
           puts "{loop_or_exit}"
         end
-    end
+      end
+
+
 
     def loop_or_exit
         puts "Would you like to search for more monsters? enter y/n"
@@ -43,12 +49,8 @@ class DND::CLI
              start
 
         else
-          puts "{goodbye}"
+          puts "Farewell, and good luck on your quest!"
         end
-    end
 
-    def goodbye
-  #  DND::Monster.destroy_all
-    puts "Farewell, and good luck on your quest!"
-  end
+      end
 end
