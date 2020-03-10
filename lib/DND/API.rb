@@ -22,4 +22,3 @@ class DND::API
           #  self.fetch(input)
         end
     end
-end

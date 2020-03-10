@@ -50,3 +50,4 @@ class DND::CLI
     puts "Farewell, and good luck on your quest!"
   end
 end
+end 
