@@ -13,20 +13,25 @@ class DND::CLI
     def display_def
         DND::Monster.all.each.with_index(1) do |d,index|
             sleep(1)
-            puts "#{index}. #{d.name} is a #{d.challenge_level} monster."
+            puts "Wow! The response["name"] is a terrifying monster!"
             puts "-----------------------------------------"
-
-        end
     end
 
     def more_options
-        puts "If you would like to know more about this monster, please enter the number associated with it."
-        input = gets.chomp.to_i
-        index = input - 1
-        user_choice = DND::Monster.all[index]
-        puts "The #{d.name} is a #{d.size} monster.
-        It has an armor class of #{d.armor_class}.
-        It is a #{d.type} of monster with an alignment of #{d.alignment}"
+        puts "Would you like to know more about this monster? enter y/n"
+
+        if input == "y"
+        #input = gets.chomp.to_i
+        #index = input - 1
+      #  user_choice = DND::Monster.all[index]
+            puts "The response["name"] is a response["size"] monster.
+            It has an armor class of response["armor_class"].
+            It is a response["type"] of monster
+            with an alignment of response["alignment"]."
+
+        else "n"
+          puts "{loop_or_exit}"
+        end
     end
 
     def loop_or_exit
