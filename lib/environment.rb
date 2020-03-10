@@ -8,5 +8,5 @@ require 'httparty'
 require 'rest-client'
 
 module DND
-  class Error < StandardError; end
+  #class Error < StandardError; end
 end

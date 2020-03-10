@@ -12,8 +12,8 @@ class DND::CLI
 
     def display_def
         DND::Monster.all.each.with_index(1) do |d,index|
-            sleep(1)
-            puts "Wow! The response["name"] is a terrifying monster!"
+            #sleep(1)
+            puts "Wow! The #{"name"} is a terrifying monster!"
             puts "-----------------------------------------"
     end
 
@@ -24,10 +24,10 @@ class DND::CLI
         #input = gets.chomp.to_i
         #index = input - 1
       #  user_choice = DND::Monster.all[index]
-            puts "The response["name"] is a response["size"] monster.
-            It has an armor class of response["armor_class"].
-            It is a response["type"] of monster
-            with an alignment of response["alignment"]."
+            puts "The #{"name"} is a #{"size"} monster.
+            It has an armor class of #{"armor_class"}.
+            It is a #{"type"} of monster with an alignment of
+            #{"alignment"}."
 
         else "n"
           puts "{loop_or_exit}"
@@ -39,6 +39,7 @@ class DND::CLI
         input = gets.chomp.downcase
         if input == "y"
              start
+
         else
           puts "{goodbye}"
         end
