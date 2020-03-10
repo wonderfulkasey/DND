@@ -2,7 +2,7 @@ Welcome to the Dungeons and Dragons 'Monster Menagerie' CLI!
 
 This gem uses the open source dnd5eapi to get information on the many monsters in the fifth edition of D&D.
 
-To RUN the program, enter  bundle install, hit enter, and then bin/DND.
+To RUN the program, enter bundle install, hit enter, and then bin/DND.
 
 
 To INSTALL this program:
