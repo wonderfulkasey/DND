@@ -3,7 +3,7 @@ class DND::CLI
     def start
         puts "Welcome to the your local 5E Monster Menagerie!"
         puts "Please type in the monster you would like for me to look up."
-        input = gets.chomp.capitalize
+        input = gets.chomp.downcase
         DND::API.fetch(input)
         display_def
         more_options
