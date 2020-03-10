@@ -7,11 +7,13 @@ class DND::CLI
         DND::API.fetch(input)
         display_def
         more_options
+        loop_or_exit
         goodbye
     end
 
     def display_def
-        DND::Monster.all.each.with_index(1) do |d,index|
+        DND::Monster
+        #.all.each.with_index(1) do |d,index|
             #sleep(1)
             puts "Wow! The #{"name"} is a terrifying monster!"
             puts "-----------------------------------------"
@@ -19,7 +21,7 @@ class DND::CLI
 
     def more_options
         puts "Would you like to know more about this monster? enter y/n"
-
+        input = gets.chomp.downcase
         if input == "y"
         #input = gets.chomp.to_i
         #index = input - 1
@@ -46,8 +48,7 @@ class DND::CLI
     end
 
     def goodbye
-    DND::Monster.destroy_all
+  #  DND::Monster.destroy_all
     puts "Farewell, and good luck on your quest!"
   end
 end
-end 
