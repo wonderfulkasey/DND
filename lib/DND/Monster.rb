@@ -4,36 +4,31 @@ class DND::Monster
 
     @@all = []
 
-    def initialize(hash)
-      hash.each {|k, v| self.send("#{k}=", v)}
-      @@all << self
-    end
+    #def initialize(hash)
+      #hash.each {|k, v| self.send("#{k}=", v)}
+      #@@all << self
+    #end
 
-    def self.display_details(index)
+    def initialize(name, type, size, alignment, armor_class)
         m = self.all(index)
         puts "----------------"
-        #@name = name
-        puts "#{m.name}"
-        #@type =
-        puts "#{m.type}"
-        #@size = size
-        puts "#{m.size}"
-        #@alignment = alignment
-        puts "#{m.alignment}"
-        #@armor_class = armor_class
-        puts "#{m.armor_class}"
+        @name = name
+        @type = type
+        @size = size
+        @alignment = alignment
+        @armor_class = armor_class
         #@wisdom = wisdom
         #@constitution = constitution
         #@charisma = charisma
-        #@@all << self
+        @@all << self
     end
 
     def self.all
       @@all
     end
 
-    def self.destroy_all
-      @@all.clear
-    end
+    #def self.destroy_all
+    #  @@all.clear
+    #end
 
   end

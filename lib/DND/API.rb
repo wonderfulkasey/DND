@@ -1,14 +1,30 @@
 class DND::API
 #self.fetch
-  def self.monster(monster)
-        monster = RestClient.get("www.dnd5eapi.co/api/monsters/#{name}")
-         #response = JSON.parse(response)
+  def self.fetch(name)
+        url = "www.dnd5eapi.co/api/monsters/#{name}"
+        response = RestClient.get(url)
+        response = JSON.parse(response)
 
-      monster.each {|monster_hash| DND::Monster.new(monster_hash)}
+         if !response.empty?
+           monster_instance = DND::Monster.new(name, type, size, alignment, armor_class)
+           response.each do |m|
+             name = m("name")
+             type = m("type")
+             size = m("size")
+             alignment = m("alignment")
+             armor_class = m("armor_class")
+    #  monster.each {|monster_hash| DND::Monster.new(monster_hash)}
   end
+else
 
+  puts "sorry, no can do"
+  input = gets.chomp.downcase
+  self.fetch(input)
+end
+end
 
 end
+
 
 #def self.monster2(two)
 #  monster = RestClient.get("www.dnd5eapi.co/api/monsters/#{name}")

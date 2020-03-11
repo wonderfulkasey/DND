@@ -7,7 +7,7 @@ class DND::CLI
         puts "-----------------------------------------"
         choice = gets.chomp.downcase
         #DND::API.monster(input)
-
+        DND::API.fetch(input)
         wowing
         more_options
         goodbye
@@ -21,6 +21,8 @@ class DND::CLI
         #  binding.pry
           #  sleep(1)
             #puts "-----------------------------------------"
+            DND::Monster.all.each do |m, index|
+
             puts "Give me just a moment...
             Wow! This truly is a terrifying monster!
             Luckily, I know all about them."
@@ -39,7 +41,8 @@ class DND::CLI
         #index = input - 1
         #user_choice = DND::Monster.all[index]
         puts "-----------------------------------------"
-        DND::API.monster
+        puts "#{index}. #{m.size}"
+        #DND::API.monster
         #DND::Monster.all.each
 
 
