@@ -1,5 +1,6 @@
 require "./lib/DND/version"
-require_relative './DND/Monster'
+require_relative './DND/Info'
+require_relative './DND/Name'
 require_relative './DND/CLI'
 require_relative './DND/API'
 

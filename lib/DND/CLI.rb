@@ -7,7 +7,7 @@ class DND::CLI
         puts "-----------------------------------------"
         choice = gets.chomp.downcase
         #DND::API.monster(input)
-        DND::API.monster
+        DND::API.
         wowing
         more_options
         goodbye
