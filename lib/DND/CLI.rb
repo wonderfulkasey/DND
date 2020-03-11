@@ -6,7 +6,7 @@ class DND::CLI
         puts "Please type in the monster you would like for me to look up."
         puts "-----------------------------------------"
         input = gets.chomp.downcase
-        DND::API.fetch(input)
+        #DND::API.monster(input)
 
         wowing
         more_options
@@ -21,7 +21,7 @@ class DND::CLI
 
         #@m=DND::Monster.all.last
         #  binding.pry
-            sleep(1)
+          #  sleep(1)
             #puts "-----------------------------------------"
             puts "Give me just a moment...
             Wow! This truly is a terrifying monster!
@@ -30,7 +30,7 @@ class DND::CLI
 
 
     def more_options
-        @m=DND::Monster.all.last
+        #@m=DND::Monster.all.last
 
         puts "Would you like to know more about this monster? enter y/n"
         puts "-----------------------------------------"
@@ -85,6 +85,7 @@ class DND::CLI
       end
     end
 
+
         def goodbye
           DND::Monster.destroy_all
           puts "-----------------------------------------"
@@ -92,6 +93,3 @@ class DND::CLI
           Farewell, and good luck on your quest!"
           puts "-----------------------------------------"
         end
-
-      end
-end
