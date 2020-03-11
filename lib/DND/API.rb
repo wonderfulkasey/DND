@@ -8,11 +8,13 @@ class DND::API
          #binding.pry
          #binding.pry
          #if !response.empty?
+
                 name = response["name"]
                 type = response["type"]
                 size = response["size"]
                 alignment = response["alignment"]
                 armor_class = response["armor_class"]
+
                 wisdom = response["wisdom"]
                 constitution = response["constitution"]
                 charisma = response["charisma"]
