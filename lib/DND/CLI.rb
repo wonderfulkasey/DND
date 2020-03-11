@@ -7,6 +7,7 @@ class DND::CLI
         puts "-----------------------------------------"
         input = gets.chomp.downcase
         DND::API.fetch(input)
+
         wowing
         more_options
         even_more
