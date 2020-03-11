@@ -34,13 +34,12 @@ class DND::CLI
         puts "-----------------------------------------"
         choice = gets.chomp.downcase
 
-        if input == "y"
+        if choice == "y"
         #input = gets.chomp.to_i
         #index = input - 1
         #user_choice = DND::Monster.all[index]
         puts "-----------------------------------------"
-        DND::Monster.display_details(input)
-        display_details
+        DND::Monster.all.each
 
         #input = gets.strip.downcase.gsub(" ","_")
         #puts "#{m.index}"

@@ -6,11 +6,11 @@ class DND::Monster
 
     #def initialize(hash)
       #hash.each {|k, v| self.send("#{k}=", v)}
-      #@@all << self
+    #  @@all << self
     #end
 
     def self.display_details(index)
-        m = self.all[index]
+        m = self.all(index)
         puts "----------------"
         #@name = name
         puts "#{m.name}"
