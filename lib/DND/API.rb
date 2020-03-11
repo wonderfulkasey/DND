@@ -1,18 +1,20 @@
 class DND::API
 #self.fetch
-  def self.fetch(name)
+  def self.fetch(monster)
         url = "www.dnd5eapi.co/api/monsters/#{name}"
         response = RestClient.get(url)
         response = JSON.parse(response)
 
          if !response.empty?
-           monster_instance = DND::Monster.new(name, type, size, alignment, armor_class)
+           monster_instance = DND::Monster.new(monster)
            response.each do |m|
              name = m("name")
              type = m("type")
              size = m("size")
              alignment = m("alignment")
              armor_class = m("armor_class")
+
+             DND::Info.new(name,type,size,alignment,armor_class)
     #  monster.each {|monster_hash| DND::Monster.new(monster_hash)}
   end
 else

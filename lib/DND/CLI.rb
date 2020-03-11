@@ -7,7 +7,7 @@ class DND::CLI
         puts "-----------------------------------------"
         choice = gets.chomp.downcase
         #DND::API.monster(input)
-        DND::API.fetch(input)
+        DND::API.monster
         wowing
         more_options
         goodbye
@@ -89,7 +89,7 @@ class DND::CLI
           goodbye
         end
       end
-    end
+
 
 
         def goodbye
@@ -99,3 +99,5 @@ class DND::CLI
           Farewell, and good luck on your quest!"
           puts "-----------------------------------------"
         end
+      end
+    end

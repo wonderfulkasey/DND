@@ -1,6 +1,7 @@
 class DND::Monster
 
-  attr_accessor :name
+  attr_accessor :name, :type, :size, :alignment, :armor_class, :wisdom, :constitution, :charisma
+
     @@all = []
 
     #def initialize(hash)
