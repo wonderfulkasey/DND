@@ -39,7 +39,9 @@ class DND::CLI
         #index = input - 1
         #user_choice = DND::Monster.all[index]
         puts "-----------------------------------------"
-        DND::Monster.all.each
+        DND::API.monster
+        #DND::Monster.all.each
+
 
         #input = gets.strip.downcase.gsub(" ","_")
         #puts "#{m.index}"

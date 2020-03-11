@@ -4,10 +4,10 @@ class DND::Monster
 
     @@all = []
 
-    #def initialize(hash)
-      #hash.each {|k, v| self.send("#{k}=", v)}
-    #  @@all << self
-    #end
+    def initialize(hash)
+      hash.each {|k, v| self.send("#{k}=", v)}
+      @@all << self
+    end
 
     def self.display_details(index)
         m = self.all(index)
@@ -32,7 +32,7 @@ class DND::Monster
       @@all
     end
 
-    def self.distroy_all
+    def self.destroy_all
       @@all.clear
     end
 
