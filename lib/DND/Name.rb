@@ -1,34 +1,15 @@
-class DND::Monster
+class DND::Name
 
-  attr_accessor :name, :type, :size, :alignment, :armor_class, :wisdom, :constitution, :charisma
+  attr_accessor :name
 
-    @@all = []
+      @@all = []
 
-    #def initialize(hash)
-      #hash.each {|k, v| self.send("#{k}=", v)}
-      #@@all << self
-    #end
+      def initialize(name)
+          @name = name
+          @@all << self
+      end
 
-    def initialize(name, type, size, alignment, armor_class)
-        m = self.all(index)
-        puts "----------------"
-        @name = name
-        @type = type
-        @size = size
-        @alignment = alignment
-        @armor_class = armor_class
-        #@wisdom = wisdom
-        #@constitution = constitution
-        #@charisma = charisma
-        @@all << self
-    end
-
-    def self.all
-      @@all
-    end
-
-    #def self.destroy_all
-    #  @@all.clear
-    #end
-
-  end
+      def self.all
+          @@all
+      end
+  end 
