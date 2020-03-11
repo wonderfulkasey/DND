@@ -1,8 +1,7 @@
 class DND::API
 #self.fetch
-  def self.monster(input)
+  def self.monster(info)
          #url = "www.dnd5eapi.co/api/monsters/#{name}"
-
          monster = RestClient.get("www.dnd5eapi.co/api/monsters/#{name}")
          #response = JSON.parse(response)
 

@@ -5,13 +5,11 @@ class DND::CLI
         puts "Welcome to the your local 5E Monster Menagerie!"
         puts "Please type in the monster you would like for me to look up."
         puts "-----------------------------------------"
-        input = gets.chomp.downcase
+        choice = gets.chomp.downcase
         #DND::API.monster(input)
 
         wowing
         more_options
-        #even_more
-        #loop_or_exit
         goodbye
     end
 
@@ -34,20 +32,24 @@ class DND::CLI
 
         puts "Would you like to know more about this monster? enter y/n"
         puts "-----------------------------------------"
-        input = gets.chomp.downcase
+        choice = gets.chomp.downcase
 
         if input == "y"
         #input = gets.chomp.to_i
         #index = input - 1
         #user_choice = DND::Monster.all[index]
         puts "-----------------------------------------"
-        input = gets.strip.downcase.gsub(" ","_")
-        DND::API.monster(input)
+        DND::Monster.display_details(input)
+        display_details
+
+        #input = gets.strip.downcase.gsub(" ","_")
+        #puts "#{m.index}"
+        #DND::API.monster(input)
             #puts "The #{@m.name} is a #{@m.size} sized monster with
             #an armor class of #{@m.armor_class}. It is of the #{@m.type}
             #variety, and can be #{@m.alignment} on the moral scale.
             #Quite an awe-inspiring lifeform!"
-            puts "-----------------------------------------"
+        #puts "-----------------------------------------"
 
         else
           loop_or_exit
@@ -74,9 +76,9 @@ class DND::CLI
     def loop_or_exit
         puts "Would you like to search for more monsters? enter y/n"
         puts "-----------------------------------------"
-        input = gets.chomp.downcase
+        choice = gets.chomp.downcase
 
-       if input == "y"
+       if choice == "y"
              start
 
         else
