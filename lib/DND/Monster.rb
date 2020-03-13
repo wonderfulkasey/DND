@@ -1,4 +1,4 @@
-class DND::Info
+class DND::Monster
   attr_accessor :name, :type, :size, :alignment, :armor_class, :wisdom, :constitution, :charisma
 
   @@all = []
@@ -8,7 +8,7 @@ class DND::Info
    @@all << self
   end
 
-  def info(index)
+  def self.things(index)
     #(name, type, size, alignment, armor_class)
       m = self.all[index]
       puts "-----"

@@ -3,15 +3,22 @@ class DND::CLI
     def start
         puts "-----------------------------------------"
         puts "Welcome to the your local 5E Monster Menagerie!"
-        puts "Please type in the monster you would like for me to look up."
+        #puts "Please type in the monster you would like for me to look up."
         puts "-----------------------------------------"
 
-        input = gets.chomp.downcase
-        DND::API.fetch(input)
+        #input = gets.chomp.downcase
+        #DND::API.fetch(input)
 
+        search_monsters
         basic_info
         more_info
         loop_or_exit
+    end
+
+    def search_monsters
+      puts "Please type in the monster you would like for me to look up."
+      choice = gets.chomp.downcase
+      DND::API.information(choice)
     end
 
 
@@ -20,7 +27,7 @@ class DND::CLI
             Wow! The #{name} is a truly terrifying monster!
             Luckily, I know all about them."
     end
-  end
+
 
 
     def more_info
@@ -59,3 +66,4 @@ class DND::CLI
 
         end
       end
+end
