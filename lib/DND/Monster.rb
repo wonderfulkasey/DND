@@ -6,7 +6,12 @@ class DND::Monster
 
  def initialize(hash)
 
-  @@all << self
+   @name = hash["name"]
+   @type = hash["type"]
+   @size = hash["size"]
+   @alignment = hash["alignment"]
+   @armor_class = hash["armor_class"]
+   @@all << self
   end
 
 
@@ -19,14 +24,7 @@ class DND::Monster
       puts "And, they have an armor class of #{m.armor_class}."
 end
 
-def index 
-      @name = name
-      @type = type
-      @size = size
-      @alignment = alignment
-      @armor_class = armor_class
-      @@all << self
-  end
+
 
   def self.all
     @@all

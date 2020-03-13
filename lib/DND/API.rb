@@ -5,15 +5,15 @@ class DND::API
         response = RestClient.get(url)
         response = JSON.parse(response)
 
-        name_instance = DND::Monster.new(name)
-        response.each do |m|
-          name = m["name"]
-          size = m["size"]
-          type = m["type"]
-          alignment = m["alignment"]
-          armor_class = m["armor_class"]
-          DND::Monster.new(name,size,type,alignment,armor_class)
+      #  name_instance = DND::Monster.new(name)
+
+          hash  = {
+          "name" => response["name"],
+          "size" => response["size"],
+          "type" => response["type"],
+          "alignment" => response["alignment"],
+          "armor_class" => response["armor_class"] }
+          DND::Monster.new(hash)
 
         end
-end
 end

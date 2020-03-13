@@ -9,7 +9,7 @@ class DND::CLI
         puts "Please enter the name of the monster you want to learn about."
         input = gets.chomp.downcase
 
-       DND::API:fetch.name
+       DND::API.fetch(input)
 
         basic_info
         more_info
@@ -19,7 +19,8 @@ class DND::CLI
 
     def basic_info
 
-     puts "#{m.name}. #{m.alignment}."
+     @m = DND::Monster.all.last
+     puts "#{@m.name}. #{@m.alignment}."
 
     end
 
@@ -29,7 +30,8 @@ class DND::CLI
       input = gets.chomp.downcase
 
       if input == "y"
-        puts "#{m.type}. #{m.size}. #{m.armor_class}."
+
+        puts "#{@m.type}. #{@m.size}. #{@m.armor_class}."
 
       else
         loop_or_exit
