@@ -4,7 +4,7 @@ class DND::Monster
   @@all = []
 
  def initialize(hash)
-   hash.each {|k, v| self.send("#{k}=", v)}
+   #hash.each {|k, v| self.send("#{k}=", v)}
    @@all << self
   end
 

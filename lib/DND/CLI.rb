@@ -10,44 +10,31 @@ class DND::CLI
         #DND::API.fetch(input)
 
         search_monsters
-        basic_info
         more_info
         loop_or_exit
     end
 
     def search_monsters
-      puts "Please type in the monster you would like for me to look up."
+      puts "Would you like to know about a monster from the 5E Manual?"
       choice = gets.chomp.downcase
-      DND::API.information(choice)
-    end
 
-
-    def basic_info
-            puts "Give me just a moment...
-            Wow! The #{name} is a truly terrifying monster!
-            Luckily, I know all about them."
-    end
-
-
-
-    def more_info
-        puts "The #{name} is a #{size} monster, with an armor class of #{armor_class}."
-        puts "Would you like to know even more about this monster? enter y/n"
-        puts "-----------------------------------------"
+      if choice == "yes"
+        puts "Please enter the name of the monster below."
         input = gets.chomp.downcase
+        #DND::API.information(input)
 
-        if input == "y"
-        #input = gets.chomp.to_i
-        #index = input - 1
-        #user_choice = DND::Monster.all[index]
-        puts "-----------------------------------------"
-        puts "It is usually #{alignment} on the moral scale."
-        puts "And, it is classified as a #{type}."
+        more_info
 
-        else
-          loop_or_exit
-        end
+      elsif choice == "no"
+        puts exit
+
+      else
+        puts "I'm sorry, I can't understand you."
+
     end
+end
+
+  def more_info
 
 
     def loop_or_exit
