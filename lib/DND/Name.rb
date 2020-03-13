@@ -1,15 +1,14 @@
-class DND::Name
+#class DND::Name
+a#ttr_accessor :name
 
-  attr_accessor :name
+    #  @@all = []
 
-      @@all = []
+    #  def initialize(name)
+      #    @name = name
+      #    @@all << self
+    #  end
 
-      def initialize(name)
-          @name = name
-          @@all << self
-      end
-
-      def self.all
-          @@all
-      end
-  end 
+    #  def self.all
+      #    @@all
+    #  end
+  #end

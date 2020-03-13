@@ -5,6 +5,7 @@ class DND::API
         response = RestClient.get(url)
         response = JSON.parse(response)
 
+        if !response.empty?
         name_instance = DND::Name.new(name)
         response.each do |m|
           name = ["name"]
@@ -23,4 +24,4 @@ class DND::API
 
       end
     end
-  end
+end

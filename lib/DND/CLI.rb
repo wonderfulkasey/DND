@@ -17,14 +17,14 @@ class DND::CLI
 
     def basic_info
             puts "Give me just a moment...
-            Wow! The #{m.name} is a truly terrifying monster!
+            Wow! The #{name} is a truly terrifying monster!
             Luckily, I know all about them."
     end
   end
 
 
     def more_info
-        puts "The #{m.name} is a #{m.size} monster, with an armor class of #{m.armor_class}."
+        puts "The #{name} is a #{size} monster, with an armor class of #{armor_class}."
         puts "Would you like to know even more about this monster? enter y/n"
         puts "-----------------------------------------"
         input = gets.chomp.downcase
@@ -34,8 +34,8 @@ class DND::CLI
         #index = input - 1
         #user_choice = DND::Monster.all[index]
         puts "-----------------------------------------"
-        puts "It is usually #{m.alignment} on the moral scale."
-        puts "And, it is classified as a #{m.type}."
+        puts "It is usually #{alignment} on the moral scale."
+        puts "And, it is classified as a #{type}."
 
         else
           loop_or_exit
