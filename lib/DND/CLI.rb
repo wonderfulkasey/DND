@@ -9,7 +9,7 @@ class DND::CLI
         puts "Please enter the name of the monster you want to learn about."
         input = gets.chomp.downcase
 
-       DND::API.fetch(input)
+       DND::API:fetch.name
 
         basic_info
         more_info
@@ -52,4 +52,5 @@ class DND::CLI
           exit
         end
       end
+end
 end
