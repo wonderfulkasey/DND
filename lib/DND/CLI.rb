@@ -15,24 +15,24 @@ class DND::CLI
 
 
     def basic_info
-        #DND::Monster
+        DND::Info.all
 
         #@m=DND::Monster.all.last
         #  binding.pry
           #  sleep(1)
             #puts "-----------------------------------------"
-            DND::Name.all.each do |m, index|
+            #DND::Name.all.each do |m, index|
 
             puts "Give me just a moment...
-            Wow! This truly is a terrifying monster!
+            Wow! The #{m.name} is a truly terrifying monster!
             Luckily, I know all about them."
+    end
   end
 
 
     def more_info
-        @m=DND::Info.all.last
-
-        puts "Would you like to know more about this monster? enter y/n"
+        puts "The #{m.name} is a #{m.size} monster, with an armor class of #{m.armor_class}."
+        puts "Would you like to know even more about this monster? enter y/n"
         puts "-----------------------------------------"
         choice = gets.chomp.downcase
 
@@ -41,7 +41,8 @@ class DND::CLI
         #index = input - 1
         #user_choice = DND::Monster.all[index]
         puts "-----------------------------------------"
-        puts "#{@armor_class}. #{@size}"
+        puts "It is usually #{m.alignment} on the moral scale."
+        puts "And, it is classified as a #{m.type}."
         #DND::API.monster
         #DND::Monster.all.each
 
@@ -85,8 +86,7 @@ class DND::CLI
        if choice == "y"
              start
 
-        else
-
+       else
           puts "-----------------------------------------"
           puts "Well then, this is where you must start your own journey.
           Farewell, and good luck on your quest!"
@@ -94,5 +94,3 @@ class DND::CLI
 
         end
       end
-end
-end
