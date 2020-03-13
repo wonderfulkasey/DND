@@ -1,11 +1,11 @@
 class DND::API
 
-  def self.information(name)
+  def fetch(name)
         url = "www.dnd5eapi.co/api/monsters/#{name}"
         response = RestClient.get(url)
         response = JSON.parse(response)
 
-        response.each {|response_hash| DND::Monster.new(response_hash)}
+        #name.each {|name_hash| DND::Monster.new(name_hash)}
 
 
         end

@@ -3,13 +3,12 @@ class DND::Monster
 
   @@all = []
 
- def initialize(hash)
+ #def initialize(hash)
    #hash.each {|k, v| self.send("#{k}=", v)}
-   @@all << self
-  end
+  # @@all << self
+  #end
 
-  def self.things(index)
-    #(name, type, size, alignment, armor_class)
+  def initialize(name, type, size, alignment, armor_class)
       m = self.all[index]
       puts "-----"
       puts "#{m.name} is a #{m.size} monster."
