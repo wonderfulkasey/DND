@@ -7,21 +7,21 @@ class DND::CLI
         puts "-----------------------------------------"
         choice = gets.chomp.downcase
         #DND::API.monster(input)
-        DND::API.
-        wowing
-        more_options
-        goodbye
+        #DND::API.fetch(input)
+        basic_info
+        more_info
+        loop_or_exit
     end
 
 
-    def wowing
+    def basic_info
         #DND::Monster
 
         #@m=DND::Monster.all.last
         #  binding.pry
           #  sleep(1)
             #puts "-----------------------------------------"
-            DND::Monster.all.each do |m, index|
+            DND::Name.all.each do |m, index|
 
             puts "Give me just a moment...
             Wow! This truly is a terrifying monster!
@@ -29,8 +29,8 @@ class DND::CLI
   end
 
 
-    def more_options
-        #@m=DND::Monster.all.last
+    def more_info
+        @m=DND::Info.all.last
 
         puts "Would you like to know more about this monster? enter y/n"
         puts "-----------------------------------------"
@@ -41,7 +41,7 @@ class DND::CLI
         #index = input - 1
         #user_choice = DND::Monster.all[index]
         puts "-----------------------------------------"
-        puts "#{index}. #{m.size}"
+        puts "#{@armor_class}. #{@size}"
         #DND::API.monster
         #DND::Monster.all.each
 
@@ -86,18 +86,13 @@ class DND::CLI
              start
 
         else
-          goodbye
-        end
-      end
 
-
-
-        def goodbye
-          DND::Monster.destroy_all
           puts "-----------------------------------------"
           puts "Well then, this is where you must start your own journey.
           Farewell, and good luck on your quest!"
           puts "-----------------------------------------"
+
         end
       end
-    end
+end
+end

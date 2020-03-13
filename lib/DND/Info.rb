@@ -13,7 +13,7 @@ class DND::Info
     #  puts "----------------"
       @name = name
       @type = type
-      @size = size
+      @size = size 
       @alignment = alignment
       @armor_class = armor_class
       #@wisdom = wisdom
