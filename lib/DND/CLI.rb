@@ -5,7 +5,7 @@ class DND::CLI
         puts "Welcome to the your local 5E Monster Menagerie!"
         #puts "Please type in the monster you would like for me to look up."
         puts "-----------------------------------------"
-        puts "Where the monsters meet their match!"
+        puts "Where the monsters meet the page!"
         puts "Please enter the name of the monster you want to learn about."
         input = gets.chomp.downcase
 
@@ -32,7 +32,9 @@ class DND::CLI
 
       if input == "y"
 
-        puts "#{@m.type}. #{@m.size}. #{@m.armor_class}."
+        puts "The #{@m.name} is a subspecies of #{@m.type}."
+        puts "They are known for being of rather #{@m.size} size."
+        puts "They have an armor class of #{@m.armor_class}."
 
       else
         loop_or_exit
