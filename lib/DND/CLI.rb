@@ -7,6 +7,7 @@ class DND::CLI
         puts "-----------------------------------------"
         puts "Where the monsters meet the page!"
         puts "Please enter the name of the monster you want to learn about."
+        puts "-----------------------------------------"
         input = gets.chomp.downcase
 
        DND::API.fetch(input)
@@ -20,6 +21,7 @@ class DND::CLI
     def basic_info
 
      @m = DND::Monster.all.last
+puts "-----------------------------------------"
      puts "Hmm..."
      puts "Wow! The #{@m.name} is truly a terrifying monster!"
 
@@ -28,13 +30,16 @@ class DND::CLI
 
     def more_info
       puts "Would you like to know more about this monster? enter y/n"
+      puts "-----------------------------------------"
       input = gets.chomp.downcase
 
       if input == "y"
 
+        puts "-----------------------------------------"
         puts "The #{@m.name} is a subspecies of #{@m.type}."
         puts "They are known for being of rather #{@m.size} size."
         puts "They have an armor class of #{@m.armor_class}."
+        puts "-----------------------------------------"
 
       else
         loop_or_exit
