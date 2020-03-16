@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-#require "bundler/setup"
-#require "environment"
 require './lib/environment'
 
 DND::CLI.new.start

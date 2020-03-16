@@ -5,8 +5,6 @@ class DND::API
         response = RestClient.get(url)
         response = JSON.parse(response)
 
-      #  name_instance = DND::Monster.new(name)
-
           hash  = {
           "name" => response["name"],
           "size" => response["size"],
