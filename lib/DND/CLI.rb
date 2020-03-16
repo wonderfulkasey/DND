@@ -5,7 +5,7 @@ class DND::CLI
         puts "Welcome to the your local 5E Monster Menagerie!"
         #puts "Please type in the monster you would like for me to look up."
         puts "-----------------------------------------"
-        puts "5E Manual Search"
+        puts "Where the monsters meet their match!"
         puts "Please enter the name of the monster you want to learn about."
         input = gets.chomp.downcase
 
@@ -20,7 +20,8 @@ class DND::CLI
     def basic_info
 
      @m = DND::Monster.all.last
-     puts "#{@m.name}. #{@m.alignment}."
+     puts "Hmm..."
+     puts "Wow! The #{@m.name} is truly a terrifying monster!"
 
     end
 
