@@ -14,6 +14,10 @@ class DND::Monster
    @@all << self
   end
 
+  def display_all
+     puts "#{@m.name} is a #{@m.type}."
+  end
+
   def self.all
     @@all
   end

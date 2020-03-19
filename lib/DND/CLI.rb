@@ -21,12 +21,10 @@ class DND::CLI
 
 
     def basic_info
-
-     @m = DND::Monster.all.last
+    @m = DND::Monster.all.last
      puts "-----------------------------------------"
      puts "Hmm..."
      puts "Wow! The #{@m.name} is truly a terrifying monster!"
-
     end
 
 
@@ -53,9 +51,11 @@ class DND::CLI
 
         start
     end
+  end
 
 
     def loop_or_exit
+        puts "-----------------------------------------"
         puts "Would you like to search for more monsters? enter y/n"
         puts "-----------------------------------------"
         input = gets.chomp.downcase
@@ -69,18 +69,22 @@ class DND::CLI
        else
           puts "-----------------------------------------"
           puts "I'm sorry, I did not understand your phrase."
-          puts "-----------------------------------------"
+            puts "-----------------------------------------"
           loop_or_exit
         end
+  end
 
 
         def check_history
+            puts "-----------------------------------------"
         puts "Would you like to see info about
             the other monsters you have looked up?"
+              puts "-----------------------------------------"
         input = gets.chomp.downcase
 
         if input == "y"
-          display_all
+          puts "-----------------------------------------"
+        DND::Monster.display_all
 
         elsif input == "n"
           puts "-----------------------------------------"
@@ -95,13 +99,12 @@ class DND::CLI
           puts "-----------------------------------------"
           check_history
       end
-
+end
 
         def display_all
-          DND::Monster.all.each do |m,hash|
+          DND::Monster.all.each.with_index(1) do |m,index|
             puts "#{@m.name} has a constitution of #{@m.constitution}."
         end
 
-end
 end
 end
