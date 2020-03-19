@@ -41,9 +41,14 @@ puts "-----------------------------------------"
         puts "They have an armor class of #{@m.armor_class}."
         puts "-----------------------------------------"
 
-      else
+      elsif input == "n"
         loop_or_exit
 
+      else
+        puts "I'm sorry, I did not understand your phrase."
+        puts "Let us start again fron the beginning!"
+
+        start
     end
 
     def loop_or_exit
@@ -53,6 +58,10 @@ puts "-----------------------------------------"
 
        if input == "y"
              start
+
+       elsif input == "n"
+         puts "I'm sorry, I did not understand your phrase."
+         loop_or_exit
 
        else
           puts "-----------------------------------------"
