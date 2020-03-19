@@ -45,6 +45,7 @@ puts "-----------------------------------------"
         loop_or_exit
 
       else
+        puts "-----------------------------------------"
         puts "I'm sorry, I did not understand your phrase."
         puts "Let us start again fron the beginning!"
 
@@ -60,15 +61,18 @@ puts "-----------------------------------------"
              start
 
        elsif input == "n"
-         puts "I'm sorry, I did not understand your phrase."
-         loop_or_exit
+         puts "-----------------------------------------"
+         puts "Well then, this is where you must start your own journey.
+         Farewell, and good luck on your quest!"
+         puts "-----------------------------------------"
+         exit
 
        else
           puts "-----------------------------------------"
-          puts "Well then, this is where you must start your own journey.
-          Farewell, and good luck on your quest!"
+          puts "I'm sorry, I did not understand your phrase."
           puts "-----------------------------------------"
-          exit
+          loop_or_exit
+
         end
       end
 end
