@@ -15,13 +15,15 @@ class DND::CLI
         basic_info
         more_info
         loop_or_exit
+        check_history
+        display_all
     end
 
 
     def basic_info
 
      @m = DND::Monster.all.last
-puts "-----------------------------------------"
+     puts "-----------------------------------------"
      puts "Hmm..."
      puts "Wow! The #{@m.name} is truly a terrifying monster!"
 
@@ -52,6 +54,7 @@ puts "-----------------------------------------"
         start
     end
 
+
     def loop_or_exit
         puts "Would you like to search for more monsters? enter y/n"
         puts "-----------------------------------------"
@@ -61,19 +64,44 @@ puts "-----------------------------------------"
              start
 
        elsif input == "n"
-         puts "-----------------------------------------"
-         puts "Well then, this is where you must start your own journey.
-         Farewell, and good luck on your quest!"
-         puts "-----------------------------------------"
-         exit
+         check_history
 
        else
           puts "-----------------------------------------"
           puts "I'm sorry, I did not understand your phrase."
           puts "-----------------------------------------"
           loop_or_exit
-
         end
+
+
+        def check_history
+        puts "Would you like to see info about
+            the other monsters you have looked up?"
+        input = gets.chomp.downcase
+
+        if input == "y"
+          display_all
+
+        elsif input == "n"
+          puts "-----------------------------------------"
+          puts "Well then, this is where you must start your own journey.
+          Farewell, and good luck on your quest!"
+          puts "-----------------------------------------"
+          exit
+
+        else
+          puts "-----------------------------------------"
+          puts "I'm sorry, I did not understand your phrase."
+          puts "-----------------------------------------"
+          check_history
       end
+
+
+        def display_all
+          DND::Monster.all.each do |m,hash|
+            puts "#{@m.name} has a constitution of #{@m.constitution}."
+        end
+
+end
 end
 end
