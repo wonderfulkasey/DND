@@ -18,8 +18,8 @@ class DND::CLI
         basic_info
         more_info
         loop_or_exit
-        check_history
-        display_history
+        #check_history
+        #display_history
     end
 
 
@@ -86,8 +86,8 @@ class DND::CLI
         input = gets.chomp.downcase
 
         if input == "y"
-          puts "-----------------------------------------"
-        display_history
+            display_stuff
+            loop_or_exit
 
         elsif input == "n"
           puts "-----------------------------------------"
@@ -103,12 +103,17 @@ class DND::CLI
           check_history
       end
 
+      #def history(input)
+      #  if input == "y"
 
-      def display_history
-        @h = DND::Monster.all.last
-        puts "#{@h.name} is a #{@h.type}."
+
+      def display_stuff
+        #@m = DND::Monster.all
+        #puts "#{@m.name} is a #{@m.type}."
+        puts "hello"
       #  DND::Monster.all.each.with_index(1) do |m,index|
         #  puts "#{@m.name} is a #{index}."
+        #check_history
       end
 
 
