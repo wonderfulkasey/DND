@@ -16,7 +16,7 @@ class DND::CLI
         more_info
         loop_or_exit
         check_history
-        display_all
+        display_history
     end
 
 
@@ -84,7 +84,7 @@ class DND::CLI
 
         if input == "y"
           puts "-----------------------------------------"
-        DND::Monster.display_all
+        display_history
 
         elsif input == "n"
           puts "-----------------------------------------"
@@ -99,12 +99,12 @@ class DND::CLI
           puts "-----------------------------------------"
           check_history
       end
-end
 
-        def display_all
-          DND::Monster.all.each.with_index(1) do |m,index|
-            puts "#{@m.name} has a constitution of #{@m.constitution}."
-        end
+
+      def display_history
+     puts "#{@m.name} is a #{@m.type}."
+      end
+
 
 end
 end

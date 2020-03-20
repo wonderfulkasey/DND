@@ -1,6 +1,6 @@
 class DND::API
 
-  def self.monster_info(name)
+  def self.fetch(name)
         url = "www.dnd5eapi.co/api/monsters/#{name}"
         response = RestClient.get(url)
         response = JSON.parse(response)
@@ -13,7 +13,7 @@ class DND::API
           "armor_class" => response["armor_class"] }
           DND::Monster.new(hash)
 
-  response.each {|monster_info| DND::Monster.new(monster_info)}
+  #response.each {|fetch| DND::Monster.new(fetch)}
 
         end
 end

@@ -5,7 +5,6 @@ class DND::Monster
 
 
  def initialize(hash)
-
    @name = hash["name"]
    @type = hash["type"]
    @size = hash["size"]
@@ -14,9 +13,13 @@ class DND::Monster
    @@all << self
   end
 
-  def display_all
-     puts "#{@m.name} is a #{@m.type}."
-  end
+  ##def display_all
+  #  DND::Monster.all.each.with_index(1) do |m,index|
+  #    puts "#{@m.name} has a constitution of #{@m.constitution}."
+#  end
+
+
+
 
   def self.all
     @@all
