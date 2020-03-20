@@ -105,7 +105,10 @@ class DND::CLI
 
 
       def display_history
-     puts "#{@m.name} is a #{@m.type}."
+        @h = DND::Monster.all.last
+        puts "#{@h.name} is a #{@h.type}."
+      #  DND::Monster.all.each.with_index(1) do |m,index|
+        #  puts "#{@m.name} is a #{index}."
       end
 
 
