@@ -1,5 +1,5 @@
 class DND::Monster
-  attr_accessor :name, :type, :size, :alignment, :armor_class, :wisdom, :constitution, :charisma
+  attr_accessor :name, :type, :size, :alignment, :armor_class, :url
 
   @@all = []
 
@@ -10,6 +10,7 @@ class DND::Monster
    @size = hash["size"]
    @alignment = hash["alignment"]
    @armor_class = hash["armor_class"]
+   @url = hash["url"]
    @@all << self
   end
 

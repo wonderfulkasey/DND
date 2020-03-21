@@ -110,9 +110,9 @@ class DND::CLI
       def display_stuff
         #@m = DND::Monster.all
         #puts "#{@m.name} is a #{@m.type}."
-        puts "hello"
+      #  puts "hello"
       #  DND::Monster.all.each.with_index(1) do |m,index|
-        #  puts "#{@m.name} is a #{index}."
+        puts "Here is the URL for your search: #{@m.url}."
         #check_history
       end
 

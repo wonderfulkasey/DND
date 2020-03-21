@@ -10,7 +10,8 @@ class DND::API
           "size" => response["size"],
           "type" => response["type"],
           "alignment" => response["alignment"],
-          "armor_class" => response["armor_class"] }
+          "armor_class" => response["armor_class"]
+          "url" => response["url"]}
           DND::Monster.new(hash)
 
   #response.each {|fetch| DND::Monster.new(fetch)}
