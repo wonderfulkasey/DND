@@ -2,13 +2,13 @@ class DND::CLI
 
     def start
         puts "-----------------------------------------".colorize(:red)
-        puts "Welcome to the your local 5E Monster Menagerie!"
+        puts "Welcome to the your local 5E Monster Menagerie!".colorize(:red)
         puts "-----------------------------------------".colorize(:red)
         puts "You can find a list of monsters at:"
         puts "www.dnd5eapi.co/api/monsters"
         puts "-----------------------------------------".colorize(:red)
-        puts "Where the monsters meet the page!"
-        puts "Please enter the name of the monster you want to learn about."
+        puts "Where the monsters meet the page!".colorize(:red)
+        puts "Please enter the name of the monster you want to learn about.".colorize(:blue)
         puts "-----------------------------------------".colorize(:red)
         input = gets.chomp.downcase
 
@@ -91,7 +91,7 @@ class DND::CLI
         elsif input == "n"
           puts "-----------------------------------------".colorize(:red)
           puts "Well then, this is where you must start your own journey.
-          Farewell, and good luck on your quest!"
+          Farewell, and good luck on your quest!".colorize(:red)
           puts "-----------------------------------------".colorize(:red)
           exit
 
