@@ -18,8 +18,8 @@ class DND::CLI
         basic_info
         more_info
         loop_or_exit
-        #check_history
-        #display_history
+        check_history
+        display_stuff
     end
 
 
@@ -81,7 +81,7 @@ class DND::CLI
         def check_history
             puts "-----------------------------------------"
         puts "Would you like to see info about
-            the other monsters you have looked up?"
+            the monsters you have looked up?"
               puts "-----------------------------------------"
         input = gets.chomp.downcase
 
@@ -102,7 +102,7 @@ class DND::CLI
           puts "-----------------------------------------"
           check_history
       end
-
+end
       #def history(input)
       #  if input == "y"
 
@@ -111,8 +111,8 @@ class DND::CLI
         #@m = DND::Monster.all
         #puts "#{@m.name} is a #{@m.type}."
       #  puts "hello"
-      #  DND::Monster.all.each.with_index(1) do |m,index|
-        puts "Here is the URL for your search: #{@m.url}."
+        DND::Monster.all.each do |m,url|
+        puts "Here is the URL for your search: dnd5eapi.co#{@m.url}."
         #check_history
       end
 
