@@ -6,7 +6,7 @@ class DND::CLI
         #puts "Please type in the monster you would like for me to look up."
         puts "-----------------------------------------"
         puts "You can find a list of monsters at:"
-        puts "www.dnd5eapi.co"
+        puts "www.dnd5eapi.co/api/monsters"
         puts "-----------------------------------------"
         puts "Where the monsters meet the page!"
         puts "Please enter the name of the monster you want to learn about."
