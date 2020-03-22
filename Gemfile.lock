@@ -2,12 +2,13 @@ PATH
   remote: .
   specs:
     DND (0.1.0)
-      rest-client
+      colorize
 
 GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.2)
+    colorize (0.8.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     http-accept (1.7.0)
@@ -39,6 +40,7 @@ DEPENDENCIES
   bundler (~> 1.10)
   pry
   rake (~> 10.0)
+  rest-client
 
 BUNDLED WITH
    1.17.3

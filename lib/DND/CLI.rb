@@ -1,7 +1,7 @@
 class DND::CLI
 
     def start
-        puts "-----------------------------------------"
+        puts "-----------------------------------------".colorize(:blue)
         puts "Welcome to the your local 5E Monster Menagerie!"
         #puts "Please type in the monster you would like for me to look up."
         puts "-----------------------------------------"
