@@ -8,7 +8,7 @@ class DND::CLI
         puts "www.dnd5eapi.co/api/monsters"
         puts "-----------------------------------------".colorize(:red)
         puts "Where the monsters meet the page!".colorize(:red)
-        puts "Please enter the name of the monster you want to learn about.".colorize(:blue)
+        puts "Enter the name of the monster you want to learn about.".colorize(:blue)
         puts "-----------------------------------------".colorize(:red)
         input = gets.chomp.downcase
 
@@ -41,7 +41,6 @@ class DND::CLI
         puts "The #{@m.name} is a subspecies of #{@m.type}."
         puts "They are known for being of rather #{@m.size} size."
         puts "They have an armor class of #{@m.armor_class}."
-        puts "-----------------------------------------".colorize(:red)
 
       elsif input == "n"
         loop_or_exit
