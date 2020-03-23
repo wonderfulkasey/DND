@@ -5,13 +5,14 @@ class DND::API
         begin
         response = RestClient.get(website)
       rescue
-        puts "Sorry, that monster doesn't exist!"
-        puts "Please enter a new monster."
+        puts "-----------------------------------------".colorize(:red)
+        puts "Sorry, that monster doesn't exist!".colorize(:red)
+        puts "Please enter a new monster.".colorize(:red)
+        puts "-----------------------------------------".colorize(:red)
         input=gets.chomp.downcase
         self.fetch(input)
       else
         response = JSON.parse(response)
-        #binding.pry
 
           hash  = {
           "name" => response["name"],
@@ -22,12 +23,7 @@ class DND::API
           "url" => response["url"]
         }
 
-
           DND::Monster.new(hash)
-end
-  #response.each {|fetch| DND::Monster.new(fetch)}
-
-
-      end
-
+        end
+    end
 end
