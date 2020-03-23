@@ -104,6 +104,7 @@ end
 
 
       def display_stuff
+        puts "-----------------------------------------".colorize(:red)
         DND::Monster.all.each do |m|
         puts "Here is the URL for your search: dnd5eapi.co#{m.url}."
       end
