@@ -48,7 +48,7 @@ class DND::CLI
       else
         puts "-----------------------------------------".colorize(:red)
         puts "I'm sorry, I did not understand your phrase."
-        puts "Let us start again fron the beginning!"
+        puts "Let us start again from the beginning!"
 
         start
     end
@@ -78,8 +78,7 @@ class DND::CLI
 
         def check_history
             puts "-----------------------------------------".colorize(:red)
-        puts "Would you like to see info about
-            the monsters you have looked up?"
+        puts "Would you like to see the information about the monsters you have looked up?"
               puts "-----------------------------------------".colorize(:red)
         input = gets.chomp.downcase
 
@@ -97,7 +96,6 @@ class DND::CLI
         else
           puts "-----------------------------------------".colorize(:red)
           puts "I'm sorry, I did not understand your phrase."
-          puts "-----------------------------------------".colorize(:red)
           check_history
       end
 end
